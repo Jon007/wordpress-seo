@@ -95,7 +95,7 @@ class Indexable_Link_Builder {
 	 */
 	public function build( $indexable, $content ) {
 		global $post;
-		if ( $indexable->object_type === 'post' ) {
+		if ( $indexable->object_type === 'post' && $post) {
 			$post_backup = $post;
 			// phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- To setup the post we need to do this explicitly.
 			$post = $this->post_helper->get_post( $indexable->object_id );
